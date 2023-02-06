@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fairfield Library :: System Administration</title>
+
+
+
+    </head>
+        <body>
+
+            <header th:replace="fragments/header :: header"></header>
+
+            <main>
+                <br>
+                <h1>System Administration</h1>
+
+                <hr>
+
+
+                <nav>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+
+                            <a class="btn btn-primary" aria-current="page"href="/secured/publisher/list">Publishers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-dark" href="/secured/book/list">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-danger" href="#">Members</a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </main>
+            <footer th:replace="fragments/footer :: footer"></footer>
+        </body>
+    </html>

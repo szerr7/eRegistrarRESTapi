@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ERegister :: System Administration</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+<body>
+
+<header th:replace="fragment/header :: header"></header>
+    
+</head>
+
+<main>
+    <h1>System Administration</h1>
+
+    <nav>
+        <ul class="nav nav-pills">
+
+        </ul>
+
+    </nav>
+    <br>
+
+    <h2>List of our students</h2>
+    <hr>
+    <br>
+
+    <a class="list" aria-current="page"href="/secured/student/list/new">Register</a>
+
+    <section>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Student Number</th>
+                <th>First name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>GPA</th>
+                <th>Date of Enrollment</th>
+                <th>International</th>
+                <th></th>
+                <th><th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student, counter : ${students}">
+                <th th:text="${counter.count}"></th>
+                <td th:text="${student.studentId}"></td>
+                <td th:text="${student.firstName}"></td>
+                <td th:text="${student.middletName}"></td>
+                <td th:text="${student.lastName}"></td>
+                <td th:text="${student.cgpa}"></td>
+                <td th:text="${student.dateOfEnrollment}"></td>
+                <td th:text="${student.international}"></td>
+                <td th:text="${student.international}"></td>
+                <td th:text="${student.international}"></td>
+<!--                <td><a href="">Edit</a></td>-->
+<!--                <td><a  th:href="@{'/secured/student/delete/{studentId}'(studentId=${student.studentId})}">Delete</a></td>-->
+<!--                </td>-->
+               <td><a th:href="@{/updateForm/{studentId}(studentId=${student.studentId})}" class="btn btn-outline-primary btn-sm">
+                    <i class="fa-brands fa-product-hunt"></i> Edit
+                </a></td>
+
+
+                <td><a th:href="@{/student/delete/{studentId}(studentId=${student.studentId})}" class="btn btn-outline-danger btn-sm met" >
+                    <i class="fa-brands fa-product-hunt"></i> Delete
+                </a></td>
+
+
+
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+</main>
+<footer th:replace="fragment/footer :: footer"></footer>
+</body>
+</html>
